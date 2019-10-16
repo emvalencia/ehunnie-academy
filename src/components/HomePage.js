@@ -37,7 +37,6 @@ const containerStyle = {
     justifyContent: 'center',
     flexDirection: 'column',
     fontFamily: 'courier',
-    background: '#282c34',
     color: 'white',
     width: '100%',
 }

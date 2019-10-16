@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
     render() {
         return (
-            <footer style={style}>@Copyright pvemander@gmail.com</footer>
+            <footer style={style}>@Copyright 2019 pvemander@gmail.com</footer>
         );
     }
 }

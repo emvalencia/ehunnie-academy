@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function App() {
   return (
     <div class='wrapper' style={style}>
+      <SidebarMenu />
       <HomePage />
     </div>
   );
@@ -16,7 +17,8 @@ export default function App() {
 const style = {
   display: 'flex',
   alignItems: 'stretch',
-  minHeight: '100vh'
+  minHeight: '100vh',
+  background: '#282c34'
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
