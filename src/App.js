@@ -1,12 +1,22 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import './App.css';
 import HomePage from './components/HomePage';
+import SidebarMenu from './components/SidebarMenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+export default function App() {
   return (
-    <HomePage />
+    <div class='wrapper' style={style}>
+      <HomePage />
+    </div>
   );
 }
 
-export default App;
+const style = {
+  display: 'flex',
+  alignItems: 'stretch',
+  minHeight: '100vh'
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));

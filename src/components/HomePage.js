@@ -1,20 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Footer from "./Footer"
-import HamburgerMenu from "./HamburgerMenu";
 
 class HomePage extends Component {
     render() {
         return (
-            <div>
-                {/* <HamburgerMenu /> */}
-                <div style={style}>
-                    <p>Ehunnie</p>
-                    <header>
-                        <img src={require("../assets/guild_logo.png")} alt="logo" />
-                    </header>
-                    <p>Academy</p>
+            <div style={containerStyle}>
+                <div className='col'>
+                    <div className='row' style={style}>
+                        <div className='col' style={nameStyle}></div>
+                        <div className='col' style={nameStyle}>
+                            <p>Ehunnie</p>
+                            <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
+                            <p>Academy</p>
+                        </div>
+                        <div className='col' style={sloganStyle}>
+                            &#123; A super secret society &#125;
+                        </div>
+                    </div>
+                    <div className='row'>
+                    <Footer />
+                    </div>
                 </div>
-                <Footer />
             </div>
         );
     }
@@ -22,13 +28,32 @@ class HomePage extends Component {
 
 const style = {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: '#282c34',
-    color: 'white',
-    height: '100vh',
-    fontSize: 'calc(45px + 2vmin)',
-    fontFamily: 'consolas'
+    flexDirection: 'column',
+    height: '100vh'
 }
 
-export default HomePage;
+const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    fontFamily: 'monospace',
+    background: '#282c34',
+    color: 'white',
+    width: '100%',
+}
+
+const sloganStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    fontSize: 'calc(8px + 2vmin)'
+}
+
+const nameStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    fontSize: 'calc(80px + 2vmin)'
+}
+
+export default HomePage
