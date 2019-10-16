@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Footer extends Component {
+export default class Footer extends Component {
     render() {
         return (
             <footer style={style}>@Copyright pvemander@gmail.com</footer>
@@ -18,5 +18,3 @@ const style = {
     padding: 10,
     width: '100%'
 }
-
-export default Footer

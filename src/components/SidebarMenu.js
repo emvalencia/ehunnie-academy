@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class SidebarMenu extends Component {
+export default class SidebarMenu extends Component {
     static propTypes = {}
 
     constructor(props) {
@@ -19,5 +19,3 @@ class SidebarMenu extends Component {
         )
     }
 }
-
-export default SidebarMenu

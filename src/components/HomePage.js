@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import Footer from "./Footer"
 
-class HomePage extends Component {
+export default class HomePage extends Component {
     render() {
         return (
             <div style={containerStyle}>
                 <div className='col'>
-                    <div className='row' style={style}>
+                    <div className='row' style={rowStyle}>
                         <div className='col' style={nameStyle}></div>
                         <div className='col' style={nameStyle}>
                             <p>Ehunnie</p>
                             <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
                             <p>Academy</p>
                         </div>
-                        <div className='col' style={sloganStyle}>
+                        <code className='col' style={sloganStyle}>
                             &#123; A super secret society &#125;
-                        </div>
+                        </code>
                     </div>
                     <div className='row'>
                     <Footer />
@@ -26,7 +26,7 @@ class HomePage extends Component {
     }
 }
 
-const style = {
+const rowStyle = {
     display: 'flex',
     flexDirection: 'column',
     height: '100vh'
@@ -36,7 +36,7 @@ const containerStyle = {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    fontFamily: 'monospace',
+    fontFamily: 'courier',
     background: '#282c34',
     color: 'white',
     width: '100%',
@@ -45,7 +45,8 @@ const containerStyle = {
 const sloganStyle = {
     display: 'flex',
     justifyContent: 'center',
-    fontSize: 'calc(8px + 2vmin)'
+    fontSize: 'calc(8px + 2vmin)',
+    color: '#C2616A'
 }
 
 const nameStyle = {
@@ -55,5 +56,3 @@ const nameStyle = {
     height: '100vh',
     fontSize: 'calc(80px + 2vmin)'
 }
-
-export default HomePage
