@@ -1,25 +1,70 @@
 import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
 import Footer from "./Footer"
+import { conditionalExpression } from '@babel/types'
 
 export default class HomePage extends Component {
+
+    state = {
+        isSmallMedia: false
+    }
+
+    handleWindowResize = () => {
+        this.setState({ isSmallMedia: window.innerWidth < 1124 });
+    }
+    
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowResize);
+    }
+
     render() {
-        return (
-            <div className='col' style={containerStyle}>
-                <div className='row' style={rowStyle}></div>
-                <div className='row' style={rowStyle}>
-                    <div className='col' style={nameStyle}>Ehunnie</div>
-                    <div className='col' style={nameStyle}>
-                        <img src={require("../assets/guild_logo.png")} alt="guild_logo"/>
+        const  {isSmallMedia } = this.state;
+
+        if (isSmallMedia) {
+            return (
+                <div className='col' style={containerStyle}>
+                    <div className='row' style={rowStyle}></div>
+                    <div className='row' style={rowStyle}>
+                        <div className='col' style={nameStyle}>Ehunnie</div>
+                        <div className='col' style={nameStyle}>
+                            <img src={require("../assets/guild_logo.png")} alt="guild_logo"/>
+                        </div>
+                        <div className='col' style={nameStyle}>Academy</div>
                     </div>
-                    <div className='col' style={nameStyle}>Academy</div>
+                    <code className='row' style={sloganStyle}>
+                        &#123; A super secret society &#125;
+                    </code>
+                    <div className='row' style={rowStyle}>
+                        {/* <Footer /> */}
+                    </div>
                 </div>
-                <code className='row' style={sloganStyle}>
-                    &#123; A super secret society &#125;
-                </code>
-                <div className='row' style={rowStyle}></div>
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div style={containerStyle}>
+                    <div className='col'>
+                        <div className='row' style={rowStyle}>
+                            <div className='col'></div>
+                            <div className='col' style={nameStyle}>
+                                <p className='row' style={nameStyle}>Ehunnie</p>
+                                <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
+                                <p className='row' style={nameStyle}>Academy</p>
+                            </div>
+                            <code className='col' style={sloganStyle}>
+                                &#123; A super secret society &#125;
+                            </code>
+                        </div>
+                        <div className='row'>
+                        <Footer />
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 
@@ -42,7 +87,6 @@ export default class HomePage extends Component {
     </div>
 </div>
 </div> */}
-
 const rowStyle = {
     display: 'flex',
     flexDirection: 'column',
