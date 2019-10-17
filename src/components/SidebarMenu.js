@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class SidebarMenu extends Component {
     static propTypes = {}
@@ -20,14 +20,12 @@ export default class SidebarMenu extends Component {
         if (this.state.toggle) {
             return (
                 <div style={openMenuStyle}>
-                    <img src={require("../assets/close_menu.png")} alt="hamburger_logo" width={55} onClick={this.toggleMenu}/>
-                    <div className='row' style={menuOptionsStyle}>
-                        <div className='col'>About</div>
-                        <div className='col'>Schedule</div>
-                        <div className='col'>Builds</div>
-                        <div className='col'>Roster</div>
-                        <div className='col'>Contact</div>
-                    </div>
+                    <img src={require("../assets/close_menu.png")} alt="hamburger_logo" width={55} style={openImgStyle} onClick={this.toggleMenu}/>
+                    <div className='col' style={menuOptionsStyle}>About</div>
+                    <div className='/Schedule' style={menuOptionsStyle}>Schedule</div>
+                    <div className='/Builds' style={menuOptionsStyle}>Builds</div>
+                    <div className='/Roster' style={menuOptionsStyle}>Roster</div>
+                    <div className='/Contacts' style={menuOptionsStyle}>Contacts</div>
                 </div>
             )
         } else {
@@ -40,14 +38,19 @@ export default class SidebarMenu extends Component {
     }
 }
 
+/* top, right, bottom, and left */
 const openMenuStyle = {
-    width: '50%',
-    background: '#C2616A'
+    background: '#C2616A',
+    padding: '5px'
+}
+
+const openImgStyle = {
+    paddingBottom: '20px'
 }
 
 const closedMenuStyle = {
-    width: '50%',
-    background: 'transparent'
+    background: 'transparent',
+    padding: '5px'
 }
 
 const hamburgerStyle = {
@@ -57,7 +60,8 @@ const hamburgerStyle = {
 const menuOptionsStyle = {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'row-reverse',
-    fontSize: 'calc(30px + 2vmin)',
-    fontFamily: 'consolas'
+    justifyContent: 'left',
+    fontSize: 'calc(15px + 2vmin)',
+    fontFamily: 'consolas',
+    padding: '10px 30px 0px 30px'
 }
