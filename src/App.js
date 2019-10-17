@@ -21,7 +21,9 @@ export default function App() {
 const containerStyle = {
   display: 'flex',
   alignItems: 'stretch',
-  minHeight: '100vh'
+  minHeight: '100vh',
+  color: 'white',
+  fontFamily: 'courier',
 }
 
 const sidebarStyle = {

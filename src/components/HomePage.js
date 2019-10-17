@@ -27,7 +27,6 @@ export default class HomePage extends Component {
         if (isSmallMedia) {
             return (
                 <div className='col' style={containerStyle}>
-                    <div className='row' style={rowStyle}></div>
                     <div className='row' style={rowStyle}>
                         <div className='col' style={nameStyle}>Ehunnie</div>
                         <div className='col' style={nameStyle}>
@@ -38,8 +37,8 @@ export default class HomePage extends Component {
                     <code className='row' style={sloganStyle}>
                         &#123; A super secret society &#125;
                     </code>
-                    <div className='row' style={rowStyle}>
-                        {/* <Footer /> */}
+                    <div className='row'>
+                        <Footer />
                     </div>
                 </div>
             );
@@ -56,84 +55,28 @@ export default class HomePage extends Component {
                     <code className='row' style={sloganStyle}>
                         &#123; A super secret society &#125;
                     </code>
+                    <div className='row'>
+                        <Footer />
+                    </div>
                 </div>
             )
         }
     }
 }
 
-/* old code that gets normal website design */
-{/* <div style={containerStyle}>
-<div className='col'>
-    <div className='row' style={rowStyle}>
-        <div className='col'></div>
-        <div className='col' style={nameStyle}>
-            <p className='row' style={nameStyle}>Ehunnie</p>
-            <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
-            <p className='row' style={nameStyle}>Academy</p>
-        </div>
-        <code className='col' style={sloganStyle}>
-            &#123; A super secret society &#125;
-        </code>
-    </div>
-    <div className='row'>
-    <Footer />
-    </div>
-</div>
-</div> */}
-
-// const rowStyle = {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     // height: '100vh',
-//     // background: 'purple'
-// }
-
-// const containerStyle = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     flexDirection: 'column',
-//     fontFamily: 'courier',
-//     color: 'white',
-//     width: '100%',
-//     // background: 'green'
-// }
-
-// const sloganStyle = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     fontSize: 'calc(8px + 2vmin)',
-//     color: '#C2616A',
-//     // background: 'blue'
-// }
-
-// const nameStyle = {
-//     display: 'flex',
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     fontSize: 'calc(8px + 10vmin)',
-//     // background: 'pink',
-//     height: '100%',
-// }
-
-const rowStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-}
-
 const containerStyle = {
     display: 'flex',
-    justifyContent: 'center',
+    flex: 1,
     flexDirection: 'column',
-    fontFamily: 'courier',
-    color: 'white',
-    width: '100%',
-    height: '100%'
+    justifyContent: 'center'
+}
+
+/* necessary for mobile layout */
+const rowStyle = {
+    flexDirection: 'column'
 }
 
 const sloganStyle = {
-    display: 'flex',
     justifyContent: 'center',
     fontSize: 'calc(8px + 2vmin)',
     color: '#C2616A'
@@ -141,7 +84,6 @@ const sloganStyle = {
 
 const nameStyle = {
     display: 'flex',
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: 'calc(8px + 10vmin)'
