@@ -51,14 +51,13 @@ const closedMenuStyle = {
 }
 
 const hamburgerStyle = {
-    width: '30%',
+    width: 'calc(50px + 2vmin)',
 }
 
 const menuOptionsStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'row-reverse',
-    // height: '100vh',
     fontSize: 'calc(30px + 2vmin)',
     fontFamily: 'consolas'
 }
