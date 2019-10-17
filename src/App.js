@@ -27,7 +27,7 @@ const containerStyle = {
 const sidebarStyle = {
   display: 'flex',
   position: 'absolute',
-  minHeight: '100vh'
+  minHeight: '100%'
 }
 
 const contentStyle = {
