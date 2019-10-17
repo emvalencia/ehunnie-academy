@@ -26,18 +26,20 @@ export default class HomePage extends Component {
 
         if (isSmallMedia) {
             return (
-                <div className='col' style={containerStyle}>
-                    <div className='row' style={rowStyle}>
-                        <div className='col' style={nameStyle}>Ehunnie</div>
-                        <div className='col' style={nameStyle}>
-                            <img src={require("../assets/guild_logo.png")} alt="guild_logo"/>
+                <div style={containerStyle}>
+                    <div className='col' style={contentStyle}>
+                        <div className='row' style={rowStyle}>
+                            <div className='col' style={nameStyle}>Ehunnie</div>
+                            <div className='col' style={nameStyle}>
+                                <img src={require("../assets/guild_logo.png")} alt="guild_logo"/>
+                            </div>
+                            <div className='col' style={nameStyle}>Academy</div>
                         </div>
-                        <div className='col' style={nameStyle}>Academy</div>
+                        <code className='row' style={sloganStyle}>
+                            &#123; A super secret society &#125;
+                        </code>
                     </div>
-                    <code className='row' style={sloganStyle}>
-                        &#123; A super secret society &#125;
-                    </code>
-                    <div className='row'>
+                    <div style={footerStyle}>
                         <Footer />
                     </div>
                 </div>
@@ -68,13 +70,12 @@ export default class HomePage extends Component {
 
 const containerStyle = {
     display: 'flex',
-    flex: 1,
     flexDirection: 'column',
+    flex: 1
 }
 
 const contentStyle = {
     display: 'flex',
-    flex: 1,
     flexDirection: 'column',
     justifyContent: 'center'
 }
