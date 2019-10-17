@@ -21,6 +21,13 @@ export default class SidebarMenu extends Component {
             return (
                 <div style={openMenuStyle}>
                     <img src={require("../assets/close_menu.png")} alt="hamburger_logo" style={hamburgerStyle} onClick={this.toggleMenu}/>
+                    <div className='row' style={menuOptionsStyle}>
+                        <div className='col'>About</div>
+                        <div className='col'>Schedule</div>
+                        <div className='col'>Builds</div>
+                        <div className='col'>Roster</div>
+                        <div className='col'>Contact</div>
+                    </div>
                 </div>
             )
         } else {
@@ -45,4 +52,13 @@ const closedMenuStyle = {
 
 const hamburgerStyle = {
     width: '30%',
+}
+
+const menuOptionsStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'row-reverse',
+    // height: '100vh',
+    fontSize: 'calc(30px + 2vmin)',
+    fontFamily: 'consolas'
 }
