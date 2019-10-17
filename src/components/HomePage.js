@@ -45,17 +45,19 @@ export default class HomePage extends Component {
         } else {
             return (
                 <div style={containerStyle}>
-                    <div className='row'>
-                        <div className='col' style={nameStyle}>
-                            <p className='row'>Ehunnie</p>
-                            <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
-                            <p className='row'>Academy</p>
+                    <div className='col' style={contentStyle}>
+                        <div className='row'>
+                            <div className='col' style={nameStyle}>
+                                <p className='row'>Ehunnie</p>
+                                <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
+                                <p className='row'>Academy</p>
+                            </div>
                         </div>
+                        <code className='row' style={sloganStyle}>
+                            &#123; A super secret society &#125;
+                        </code>
                     </div>
-                    <code className='row' style={sloganStyle}>
-                        &#123; A super secret society &#125;
-                    </code>
-                    <div className='row'>
+                    <div style={footerStyle}>
                         <Footer />
                     </div>
                 </div>
@@ -68,7 +70,20 @@ const containerStyle = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
+}
+
+const contentStyle = {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
     justifyContent: 'center'
+}
+
+const footerStyle = {
+    display: 'flex',
+    maxHeight: '4%',
+    justifyContent: 'flex-end',
+    background: 'pink'
 }
 
 /* necessary for mobile layout */
