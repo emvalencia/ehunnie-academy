@@ -7,37 +7,42 @@ export default class SidebarMenu extends Component {
         super(props)
 
         this.state = {
-            toggle: true
+            toggle: false
         }
     }
 
     /* boolean that triggers opening and closing of menu */
-    toggleMenu () {
+    toggleMenu = () => {
         this.setState({ toggle: !this.state.toggle})
     }
 
     render() {
         if (this.state.toggle) {
             return (
-                <div style={menuStyle}>
-                    <img src={require("../assets/hamburger.png")} alt="hamburger_logo" style={sidebarStyle} onClick={this.toggleMenu}/>
+                <div style={openMenuStyle}>
+                    <img src={require("../assets/close_menu.png")} alt="hamburger_logo" style={hamburgerStyle} onClick={this.toggleMenu}/>
                 </div>
             )
         } else {
             return (
-                <div>
-                    <img src={require("../assets/hamburger.png")} alt="hamburger_logo" style={sidebarStyle} onClick={this.toggleMenu}/>
+                <div style={closedMenuStyle}>
+                    <img src={require("../assets/hamburger.png")} alt="close_menu" style={hamburgerStyle} onClick={this.toggleMenu}/>
                 </div>
             )
         }
     }
 }
 
-const menuStyle = {
-    width: '20%',
+const openMenuStyle = {
+    width: '50%',
     background: '#C2616A'
 }
 
-const sidebarStyle = {
-    width: '20%',
+const closedMenuStyle = {
+    width: '50%',
+    background: 'transparent'
+}
+
+const hamburgerStyle = {
+    width: '30%',
 }

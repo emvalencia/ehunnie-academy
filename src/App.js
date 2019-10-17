@@ -7,18 +7,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
-    <div class='wrapper' style={style}>
-      <SidebarMenu />
-      <HomePage />
+    <div style={containerStyle}>
+       <div style={contentStyle}>
+        <HomePage />
+      </div>
+      <div style={sidebarStyle}>
+        <SidebarMenu />
+      </div>
     </div>
   );
 }
 
-const style = {
+const containerStyle = {
   display: 'flex',
   alignItems: 'stretch',
-  minHeight: '100vh',
-  background: '#282c34'
+  minHeight: '100vh'
+}
+
+const sidebarStyle = {
+  display: 'flex',
+  position: 'absolute',
+  minHeight: '100vh'
+}
+
+const contentStyle = {
+  display: 'flex',
+  background: '#282c34',
+  minWidth: '100%'
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
