@@ -20,7 +20,7 @@ export default class SidebarMenu extends Component {
         if (this.state.toggle) {
             return (
                 <div style={openMenuStyle}>
-                    <img src={require("../assets/close_menu.png")} alt="hamburger_logo" style={hamburgerStyle} onClick={this.toggleMenu}/>
+                    <img src={require("../assets/close_menu.png")} alt="hamburger_logo" width={55} onClick={this.toggleMenu}/>
                     <div className='row' style={menuOptionsStyle}>
                         <div className='col'>About</div>
                         <div className='col'>Schedule</div>
@@ -33,7 +33,7 @@ export default class SidebarMenu extends Component {
         } else {
             return (
                 <div style={closedMenuStyle}>
-                    <img src={require("../assets/hamburger.png")} alt="close_menu" style={hamburgerStyle} onClick={this.toggleMenu}/>
+                    <img src={require("../assets/hamburger.png")} alt="close_menu" width={65} onClick={this.toggleMenu}/>
                 </div>
             )
         }
