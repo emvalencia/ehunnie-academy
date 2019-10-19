@@ -26,6 +26,7 @@ export default class HomePage extends Component {
     render() {
         const  {isSmallMedia } = this.state;
 
+        /* for mobile/small layouts */
         if (isSmallMedia) {
             return (
                 <div style={containerStyle}>
@@ -41,12 +42,13 @@ export default class HomePage extends Component {
                             &#123; A super secret society &#125;
                         </code>
                     </div>
-                    <div style={footerStyle}>
-                        <Footer />
-                    </div>
+                    <Footer />
                 </div>
             );
-        } else {
+        } 
+        
+        /* for web/larger layouts */
+        else {
             return (
                 <div style={containerStyle}>
                     <div className='col' style={contentStyle}>
@@ -61,9 +63,7 @@ export default class HomePage extends Component {
                             &#123; A super secret society &#125;
                         </code>
                     </div>
-                    <div style={footerStyle}>
-                        <Footer />
-                    </div>
+                    <Footer />
                 </div>
             )
         }
@@ -80,13 +80,6 @@ const contentStyle = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'
-}
-
-const footerStyle = {
-    display: 'flex',
-    maxHeight: '4%',
-    justifyContent: 'flex-end',
-    background: 'pink'
 }
 
 /* necessary for mobile layout */

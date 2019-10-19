@@ -23,6 +23,9 @@ export default class SidebarMenu extends Component {
                 <div style={openMenuStyle}>
                     <img src={require("../assets/close_menu.png")} alt="hamburger_logo" width={55} style={openImgStyle} onClick={this.toggleMenu}/>
                     <div className='col' style={menuOptionsStyle}>
+                        <Link to="/Home" style={link}>Home</Link>
+                    </div>
+                    <div className='col' style={menuOptionsStyle}>
                         <Link to="/About" style={link}>About</Link>
                     </div>
                     <div className='col' style={menuOptionsStyle}>

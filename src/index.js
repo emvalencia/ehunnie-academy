@@ -13,9 +13,11 @@ const routing = (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={App} /> 
-            <Route exact path="/Home" component={Home} />
+            <Route exact path="/Home" component={App} />
             <Route path="/About" component={About} />
-            <Route path="/Schedule" component={Schedule} />
+            <Route path="/Schedule" component={ () => {
+                window.location.href = 'https://docs.google.com/spreadsheets/d/18Z1sBLUg5_S1MB_etLsKZ44Q2UEI__pBmlkH_5Mu9D4/edit?usp=sharing';
+            }} />
             <Route path="/Builds" component={ () => {
                 window.location.href = 'https://www.snowcrows.com/';
             }} />
