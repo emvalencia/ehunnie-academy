@@ -16,5 +16,5 @@ const style = {
     color: 'white',
     fontSize: 'calc(3px + 1.5vmin)',
     padding: 10,
-    width: '100%'
+    width: '100%',
 }

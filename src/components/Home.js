@@ -1,7 +1,5 @@
-import React, { Component } from 'react'
-import MediaQuery from 'react-responsive'
-import Footer from "./Footer"
-import { conditionalExpression } from '@babel/types'
+import React, { Component } from 'react';
+import Footer from "./Footer";
 
 export default class HomePage extends Component {
 
@@ -21,6 +19,10 @@ export default class HomePage extends Component {
         window.removeEventListener('resize', this.handleWindowResize);
     }
 
+    imgClicked = () => {
+        alert("Git gud");
+    }
+
     render() {
         const  {isSmallMedia } = this.state;
 
@@ -31,7 +33,7 @@ export default class HomePage extends Component {
                         <div className='row' style={rowStyle}>
                             <div className='col' style={nameStyle}>Ehunnie</div>
                             <div className='col' style={nameStyle}>
-                                <img src={require("../assets/guild_logo.png")} alt="guild_logo"/>
+                                <img src={require("../assets/guild_logo.png")} alt="guild_logo" onClick={this.imgClicked}/>
                             </div>
                             <div className='col' style={nameStyle}>Academy</div>
                         </div>
@@ -51,7 +53,7 @@ export default class HomePage extends Component {
                         <div className='row'>
                             <div className='col' style={nameStyle}>
                                 <p className='row'>Ehunnie</p>
-                                <img src={require("../assets/guild_logo.png")} alt="guild_logo" />
+                                <img src={require("../assets/guild_logo.png")} alt="guild_logo" onClick={this.imgClicked}/>
                                 <p className='row'>Academy</p>
                             </div>
                         </div>

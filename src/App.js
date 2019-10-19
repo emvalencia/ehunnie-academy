@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
 import './App.css';
-import HomePage from './components/HomePage';
+import Home from './components/Home';
 import SidebarMenu from './components/SidebarMenu';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function App() {
-  return (
-    <div style={containerStyle}>
-       <div style={contentStyle}>
-        <HomePage />
+export default class App extends Component {
+  render() {
+    return (
+      <div style={containerStyle}>
+        <div style={contentStyle}>
+          <Home />
+        </div>
+        <div style={sidebarStyle}>
+          <SidebarMenu />
+        </div>
       </div>
-      <div style={sidebarStyle}>
-        <SidebarMenu />
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 const containerStyle = {
@@ -38,4 +38,4 @@ const contentStyle = {
   minWidth: '100%'
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+

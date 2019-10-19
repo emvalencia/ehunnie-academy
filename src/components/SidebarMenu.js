@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SidebarMenu extends Component {
     static propTypes = {}
@@ -21,11 +22,15 @@ export default class SidebarMenu extends Component {
             return (
                 <div style={openMenuStyle}>
                     <img src={require("../assets/close_menu.png")} alt="hamburger_logo" width={55} style={openImgStyle} onClick={this.toggleMenu}/>
-                    <div className='col' style={menuOptionsStyle}>About</div>
-                    <div className='/Schedule' style={menuOptionsStyle}>Schedule</div>
-                    <div className='/Builds' style={menuOptionsStyle}>Builds</div>
-                    <div className='/Roster' style={menuOptionsStyle}>Roster</div>
-                    <div className='/Contacts' style={menuOptionsStyle}>Contacts</div>
+                    <div className='col' style={menuOptionsStyle}>
+                        <Link to="/About" style={link}>About</Link>
+                    </div>
+                    <div className='col' style={menuOptionsStyle}>
+                        <Link to="/Schedule" style={link}>Schedule</Link>
+                    </div>
+                    <div className='col' style={menuOptionsStyle}>
+                        <Link to="/Builds" style={link}>Builds</Link>
+                    </div>
                 </div>
             )
         } else {
@@ -53,10 +58,6 @@ const closedMenuStyle = {
     padding: '5px'
 }
 
-const hamburgerStyle = {
-    width: 'calc(50px + 2vmin)',
-}
-
 const menuOptionsStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -64,4 +65,8 @@ const menuOptionsStyle = {
     fontSize: 'calc(15px + 2vmin)',
     fontFamily: 'consolas',
     padding: '10px 30px 0px 30px'
+}
+
+const link = {
+    color: 'white'
 }
